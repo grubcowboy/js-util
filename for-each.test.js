@@ -1,9 +1,8 @@
 import { expect, test } from "bun:test";
+import { forEach } from "./for-each"
 
-test("2 + 2", () => {
-    expect(2 + 2).toBe(4);
-});
-const func = i => i + 1;
 test("0s to 1s", () => {
-    expect([0, 0, 0], func).toBe([1, 1, 1]);
+    const list = [0, 0, 0];
+    forEach(list, i => i + 1);
+    expect(JSON.stringify(list)).toBe(JSON.stringify([1, 1, 1]));
 });
